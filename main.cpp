@@ -12,21 +12,18 @@ float process (char st[])
     strcpy(st2, st);
     char *num = strtok(st2, "+-");
     float res;
-   // cout << num<< endl;
     res = atof(num);
     for (int i  = 0; i < strlen(st); i++)
     {
         if (st[i] == '+')
         {
-          //  cout << num << endl;
             num = strtok(NULL, "+-");
             res += atof(num);
         }
         if (st[i] == '-')
         {
-          //  cout << num << endl;
             num = strtok(NULL, "+-");
-            res += atof(num);
+            res -= atof(num);
         }
     }
 
